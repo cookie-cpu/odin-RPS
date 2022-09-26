@@ -14,19 +14,39 @@ function getCPUchoice() {
 
 
 function playRound(playerSelection, computerSelection) {
+
+    //case conversion for easier string comparison
     playerSelection = playerSelection.toLowerCase()
     computerSelection = computerSelection.toLowerCase()
 
-    switch (playerSelection) {
-        case "rock":
-            return "tie"
-            break;
+    // Same choice leads to a tie
+    if (playerSelection == computerSelection) {
+        return "Tie! You chose the same the move!"
+
+    //logic for playerSelection 'Rock"
+    } else if (playerSelection == "rock" && computerSelection == "scissors"){
+        return "You win! Rock beats Scissors!"
+    } else if (playerSelection == "rock" && computerSelection == "paper"){
+        return "You lose! Paper beats Rock!"
     
-        default:
-            break;
-    }
-  }
+    //logic for playerSelection "Paper"
+    } else if (playerSelection == "paper" && computerSelection == "scissors"){
+        return "You Lose! Scissors beats Paper!"
+    } else if (playerSelection == "paper" && computerSelection == "rock"){
+        return "You Win! Paper beats rock!"
+    
+
+    //logic for playerSelection "Scissors"
+    } else if (playerSelection == "scissors" && computerSelection == "paper"){
+         return "You Win! Scissors beats Paper!"
+    } else if (playerSelection == "scissors" && computerSelection == "rock"){
+    return "You Lose! Rock beats Scissors!"
+    }   
+}
+
+
    
   const playerSelection = "rock";
   const computerSelection = getCPUchoice();
+  console.log("You chose: " + playerSelection + ", computer chose: " + computerSelection);
   console.log(playRound(playerSelection, computerSelection));
