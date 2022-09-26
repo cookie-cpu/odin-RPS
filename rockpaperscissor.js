@@ -1,9 +1,6 @@
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-function getCPUchoice(x) {
-    switch(getRandomInt(x))
+function getCPUchoice() {
+    switch(Math.floor(Math.random() * 3))
     {
         case 0:
             return "Rock";
@@ -13,7 +10,7 @@ function getCPUchoice(x) {
             return "Scissor";
         }
 }
-// console.log("CPU Chose: " + getCPUchoice())
+console.log("CPU Chose: " + getCPUchoice())
 
 function playRound(getCPUchoice, playerChoice){
     if (getCPUchoice == "Rock" && playerChoice == "Rock") {
@@ -23,4 +20,4 @@ function playRound(getCPUchoice, playerChoice){
     }
 }
 
-console.log(playRound(3, "Rock"));
+// console.log(playRound(3, "Rock"));
