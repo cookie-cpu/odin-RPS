@@ -7,17 +7,26 @@ function getCPUchoice() {
         case 1:
             return "Paper";
         case 2:
-            return "Scissor";
+            return "Scissors";
         }
 }
-console.log("CPU Chose: " + getCPUchoice())
+// console.log("CPU Chose: " + getCPUchoice())
 
-function playRound(getCPUchoice, playerChoice){
-    if (getCPUchoice == "Rock" && playerChoice == "Rock") {
-        return "Tie"
-    } else {
-        
+
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase()
+    computerSelection = computerSelection.toLowerCase()
+
+    switch (playerSelection) {
+        case "rock":
+            return "tie"
+            break;
+    
+        default:
+            break;
     }
-}
-
-// console.log(playRound(3, "Rock"));
+  }
+   
+  const playerSelection = "rock";
+  const computerSelection = getCPUchoice();
+  console.log(playRound(playerSelection, computerSelection));
