@@ -60,12 +60,13 @@ const computerSelection = getCPUchoice();
 
 function game(){
     while (playerScore || computerScore < 5) {
-        playRound(playerSelection, computerSelection)
-        return "Score is: \n p1:" + playerScore + "\n p2:" + computerScore
+        playRound(playerSelection, computerSelection);
+        return "||SCORE|| \n p1: " + playerScore + "\n p2: " + computerScore;
     }
     
 }
 
 //   console.log("You chose: " + playerSelection + ", computer chose: " + computerSelection);
 //   console.log(playRound(playerSelection, computerSelection));
+  console.log(game());
   
